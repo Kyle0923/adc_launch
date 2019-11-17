@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 298ef6601e39759a458c4af2fa427199fe04b55a Kyle <kyle0923@qq.com> 1573684167 -0500	commit (initial): init commit, add publish /cmd_vel msg
+298ef6601e39759a458c4af2fa427199fe04b55a 887d37808bdb42ed4ac420780b68f39bcfeddbf5 Kyle <kyle0923@qq.com> 1573812259 -0500	commit: change duration to 1 sec
