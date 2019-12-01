@@ -57,6 +57,16 @@ int main(int argc, char** argv)
             cmd_vel.linear.x = v;
             cmd_vel.angular.z = w;
         }
+        else if (input == "dc")
+        {
+            cout << "duty cycle mode: e.g. for -10% input -0.1" << endl;
+            cmd_vel.linear.x = -1;
+            cmd_vel.angular.x = -1;
+            cmd_vel.angular.y = -1;
+            cmd_vel.angular.z = -1;
+            cin >> cmd_vel.linear.y;
+            cin >> cmd_vel.linear.z;
+        }
         else if (input == "q")
         {
             stop(cmd_vel, vel_pub);

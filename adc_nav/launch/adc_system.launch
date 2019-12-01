@@ -1,5 +1,5 @@
 <launch>
     <include file="$(find ydlidar)/launch/lidar.launch" />
     <node pkg="adc_llc" type="adc_llc_node" name="adc_llc_node" output="screen" />
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find adc_nav)/config/adc.rviz" />
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find adc_nav)/config/adc.rviz" /> -->
 </launch>
