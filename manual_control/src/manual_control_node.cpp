@@ -87,7 +87,7 @@ int main(int argc, char** argv)
             }
             else if (input == "v")
             {
-                if (configValue <= 0) {
+                if (configValue < 0) {
                     v = 1.3371;
                 } else {
                     v = configValue;
@@ -95,11 +95,7 @@ int main(int argc, char** argv)
             }
             else if (input == "w")
             {
-                if (configValue < 0) {
-                    w = 20.8916;
-                } else {
-                    w = configValue;
-                }
+                w = configValue;
             }
             continue;
         }
