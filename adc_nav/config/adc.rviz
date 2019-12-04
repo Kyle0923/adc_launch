@@ -9,6 +9,11 @@ Panels:
         - /LidarLaserScan1
         - /Map1
         - /PoseArray1
+        - /GridCells1
+        - /GridCells1/Status1
+        - /Pose1
+        - /Polygon1
+        - /Polygon1/Status1
       Splitter Ratio: 0.5
     Tree Height: 666
   - Class: rviz/Selection
@@ -28,7 +33,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LidarLaserScan
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -81,7 +86,7 @@ Visualization Manager:
       Style: Squares
       Topic: /scan
       Unreliable: false
-      Use Fixed Frame: true
+      Use Fixed Frame: false
       Use rainbow: true
       Value: true
     - Class: rviz/TF
@@ -104,10 +109,11 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          odom:
-            base_link:
-              laser_frame:
-                {}
+          {}
+        odom:
+          base_link:
+            laser_frame:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 0.699999988079071
@@ -136,6 +142,36 @@ Visualization Manager:
       Topic: /particlecloud
       Unreliable: false
       Value: false
+    - Alpha: 1
+      Class: rviz/GridCells
+      Color: 25; 255; 0
+      Enabled: true
+      Name: GridCells
+      Topic: local_costmap/inflated_obstacles
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.10000000149011612
+      Name: Pose
+      Shaft Length: 1
+      Shaft Radius: 0.05000000074505806
+      Shape: Arrow
+      Topic: "/move_base/current_goal\n"
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Topic: local_costmap/robot_footprint
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -159,16 +195,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.607876300811768
+      Distance: 13.102235794067383
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.014113038778305054
-        Y: 0.23956623673439026
-        Z: 0.10746734589338303
+        X: 1.8550465106964111
+        Y: 0.6967233419418335
+        Z: 0.10934871435165405
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false

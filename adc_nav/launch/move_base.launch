@@ -2,7 +2,7 @@
 
    <master auto="start"/>
  <!-- Run the map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find adc_map)/kitchen.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find adc_map)/room.yaml"/>
 
  <!--- Run AMCL -->
     <include file="$(find adc_nav)/launch/amcl_diff.launch" />
@@ -10,7 +10,7 @@
     args="0.0 0.0 0.0 0.0 0.0  0.0 /map /odom 40" /> -->
 
    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <!-- <param name="clearing_rotation_allowed" value="false" /> -->
+    <param name="clearing_rotation_allowed" value="false" />
     <rosparam file="$(find adc_nav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find adc_nav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find adc_nav)/config/local_costmap_params.yaml" command="load" />
