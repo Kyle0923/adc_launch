@@ -22,8 +22,8 @@ int main(int argc, char** argv)
     ros::Publisher vel_pub = rosNode.advertise<geometry_msgs::Twist>("cmd_vel", 50);
 
     geometry_msgs::Twist cmd_vel;
-    double v = 1.3371; // calc from 170 rpm
-    double w = 0;
+    double v = 0.5;
+    double w = 1;
     std::string input = "";
     double duration = 1.0;
     // ros::Rate loop_rate(500);
@@ -37,25 +37,25 @@ int main(int argc, char** argv)
         {
             cout << "turnLeft" << endl;
             cmd_vel.linear.x = 0;
-            cmd_vel.angular.z = 20.8916;
+            cmd_vel.angular.z = w;
         }
         else if (input == "d")
         {
             cout << "turnRight" << endl;
             cmd_vel.linear.x = 0;
-            cmd_vel.angular.z = -1 * 20.8916;
+            cmd_vel.angular.z = -1 * w;
         }
         else if (input == "s")
         {
             cout << "reverse" << endl;
             cmd_vel.linear.x = -1 * v;
-            cmd_vel.angular.z = w;
+            cmd_vel.angular.z = 0;
         }
         else if (input == "w")
         {
             cout << "forward" << endl;
             cmd_vel.linear.x = v;
-            cmd_vel.angular.z = w;
+            cmd_vel.angular.z = 0;
         }
         else if (input == "dc")
         {

@@ -3,5 +3,6 @@ global_costmap:
   robot_base_frame: base_link
   update_frequency: 5.0
   static_map: true
-  origin_x: -2000.0 
+  transform_tolerance: 10.0
+  origin_x: -2000.0
   origin_y: -2000.0
